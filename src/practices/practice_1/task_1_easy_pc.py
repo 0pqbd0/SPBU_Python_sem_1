@@ -10,7 +10,7 @@ def find_quotient(a, b):
         return quotient
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     divisible = int(input("Введите делимое:"))
     divider = int(input("Введите делитель:"))
     print("Неполное частное:", find_quotient(divisible, divider), sep="")
