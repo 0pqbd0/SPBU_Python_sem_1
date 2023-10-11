@@ -7,7 +7,6 @@ def find_file(file_name):
     part_path, _ = os.path.split(current_path)
     file_path = os.path.join(part_path, file_name)
     if not os.path.isfile(file_path):
-        print(f"Ошибка! Файл с именем: '{file_name}' не найден.")
         return None
     return file_path
 
@@ -29,9 +28,9 @@ def sort_data(a, b, file_in):
 
 
 def write_data(file_out, *lists):
-    with open(file_out, 'w') as f_out:
+    with open(file_out, "w") as f_out:
         for lst in lists:
-            f_out.write(' '.join(lst) + '\n')
+            f_out.write(" ".join(lst) + "\n")
 
 
 if __name__ == "__main__":
@@ -43,6 +42,7 @@ if __name__ == "__main__":
         if file_out_path:
             print(
                 f"Ошибка! Файла с именем: '{sys.argv[-2]}' не существует, "
-                f"но файл для вывода с именем '{sys.argv[-1]}' существует")
+                f"но файл для вывода с именем '{sys.argv[-1]}' существует"
+            )
         sys.exit(1)
     write_data(file_out_path, *sort_data(num_1, num_2, file_in_path))
